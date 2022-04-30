@@ -8,6 +8,11 @@ import Home from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
 import NavBar from './Components/NavBar/NavBar';
 import MyAccount from './Components/MyAccount/MyAccount';
+import Blog from './Components/Blog/Blog';
+import AddItems from './Components/AddItems/AddItems';
+import ManageItem from './Components/ManageItems/ManageItem';
+import Items from './Components/Items/Items';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -15,6 +20,10 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/' element={<Blog />}></Route>
+        <Route path='/manageItem' element={<ManageItem />}></Route>
+        <Route path='/addItems' element={<AddItems />}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
 
         <Route path='/account' element={<MyAccount />}></Route>
         <Route path='/signin' element={<SignIn />}></Route>
