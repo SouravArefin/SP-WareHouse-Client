@@ -41,20 +41,27 @@ const Navbar = () => {
                     <div className="items md:flex">
                         <li className='p-2 sp-style md:mx-2 li-style text-white font-medium'><NavLink to="/">Home</NavLink></li>
                         <li className='p-2 sp-style md:mx-2 li-style text-white font-medium'><NavLink to="/blog">Blog</NavLink></li>
-                        <li className='p-2 sp-style md:mx-2 li-style text-white  font-medium'><NavLink to="/services">Services</NavLink></li>
-                        <li className='p-2 sp-style md:mx-2 li-style text-white  font-medium'><NavLink to="/about">About</NavLink></li>
+                        <li className='p-2 sp-style md:mx-2 li-style text-white  font-medium'><NavLink to="/services">Items</NavLink></li>
+                        <li className='p-2 sp-style md:mx-2 li-style text-white  font-medium'><NavLink to="/contact">Contact Us</NavLink></li>
 
                         {
                             user ?
+                            <>
+                                
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><Link to="/manageItem">Manage Items</Link></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><Link to="-addItems">Add Items</Link></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><Link to="/account">My Account</Link></li>
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:mx-2  text-red-500 font-medium' onClick={logout}>Sign Out <FontAwesomeIcon icon={faSignOut} /></li>
+                             </>
 
-                                : <li style={{ cursor: 'pointer' }} className='p-2 md:mx-2 text-blue-500 font-medium'><Link to="/login">Sign In <FontAwesomeIcon icon={faSignIn} /></Link></li>
-
+                                :
+                              
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:mx-2 text-blue-500 font-medium'><Link to="/login">Sign In <FontAwesomeIcon icon={faSignIn} /></Link></li>
                         }
 
 
 
-                        <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><Link to="/account">My Account</Link></li>
+                        
 
 
                     </div>
