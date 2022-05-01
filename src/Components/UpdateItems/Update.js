@@ -17,8 +17,6 @@ const Update = () => {
         const quantity = e.target.quantity.value;
         const updateItem = { name, img,quantity }
         
-//update data to the server
-
         fetch(`http://localhost:4000/items/${id}`, {
             method: 'PUT',
             headers: {
@@ -34,7 +32,24 @@ const Update = () => {
 
         e.target.reset()
 }
+    const handleDeliver = id => {
 
+        console.log(id)
+        const updateQuantity = item?.quantity - 1
+        console.log(updateQuantity);
+        fetch(`http://localhost:4000/deliver/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
+         })
+            .then(res => res.json())
+           .then(data => {
+               console.log('success', data)
+               toast('Your item has been delivered')
+        })
+}
     return (
         <div>
             <div style={{ margin: '20%' }}>
@@ -51,7 +66,7 @@ const Update = () => {
                             <p><span className='font-bold'>Time:</span> : {item?.Duration}</p>
 
                         </div>
-                        <button className='bg-[#f75c03] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Delivered</button>
+                        <button onClick={()=>handleDeliver(id)}className='bg-[#f75c03] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Delivered</button>
                     </div>
 
                 </div>

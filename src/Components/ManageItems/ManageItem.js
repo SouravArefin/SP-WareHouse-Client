@@ -2,27 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import useItems from '../../Hooks/useItems';
 const ManageItem = (props) => {
     const { _id, name, img, details, price, Duration, quantity } = props.send
-    const [items, setItems] = useState([])
-const [isReloaded,setReloaded] = useState(false)
+    const {items, setItems} = useItems()
+    
+
     const navigate = useNavigate()
     const handleUpdate = (id) => {
         navigate(`/update/${id}`)
     }
-    useEffect(() => {
-        const url = `http://localhost:4000/items`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setItems(data))
-    }, [isReloaded])
+ 
     const handleDelete = id => {
-        const proceed = window.confirm("Are u sure u want to proceed?")
+        const confirmMsg = window.confirm("Are you sure?")
 
-        if (proceed) {
+        if (confirmMsg) {
             console.log("delete with id", id)
-            //delete data to the server
-
+            
             fetch(`http://localhost:4000/items/${id}`, {
                 method: 'DELETE',
 
