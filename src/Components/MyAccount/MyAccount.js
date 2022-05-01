@@ -8,6 +8,9 @@ const MyAccount = () => {
     const userImg = user?.photoURL ? user?.photoURL : avater;
     return (
         <div style={{margin:'20%'}}>
+
+            <h1>Hey {user?.displayName}, Here is your items</h1>
+         <div >
             {/* <div className=' flex w-48 items-center absolute top-0 right-0 md:static'>
                 <p className=' font-black '>Name: {user? user.displayName : "Login-first"}</p>
            <img className="w-10 h-10 rounded-full  ml-3"src={userImg} alt='' />
@@ -33,7 +36,11 @@ const MyAccount = () => {
   
 
 </div>
+            </div>
+            
+            
         </div>
+      
     );
 };
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import useItems from '../../Hooks/useItems';
 import ManageItem from './ManageItem';
-
+import { Link, useParams } from 'react-router-dom';
 const HomeItem = () => {
     const { items } = useItems()
     console.log(items,'items')
     return (
-          <div>
+        <div>
+            <button style={{ marginTop: '15%'}} className='bg-[#690707] ml-2 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
              <div className='mt-28'>
             <h1 className='serv-head text-3xl text-gray-500 font-medium text-center py-4'>Choose your valuable items..</h1>
             <h1 className='text-3xl text-green-700 font-medium text-center py-4'>Available in Stock</h1>

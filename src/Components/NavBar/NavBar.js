@@ -50,7 +50,7 @@ const Navbar = () => {
                                 
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:ml-5 text-white font-medium'><Link to="/manageItem">Manage Items</Link></li>
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-white font-medium'><Link to="/addItems">Add Items</Link></li>
-                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><Link to="/account">My Account</Link></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><Link to="/account">My Items</Link></li>
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:ml-10  text-red-500 font-medium' onClick={logout}>Sign Out <FontAwesomeIcon icon={faSignOut} /></li>
                              </>
 
