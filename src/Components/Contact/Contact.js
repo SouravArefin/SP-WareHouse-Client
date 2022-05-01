@@ -20,17 +20,17 @@ const Contact = () => {
           </h5>
           <h5 className="mt-5 text-2xl">
             <FontAwesomeIcon className="" icon={faEnvelope} />
-            <span style={{marginLeft:'10px'}}>Official: Royal@gmail.com</span>   
+            <span style={{marginLeft:'10px'}}>Official: spwarehouse@gmail.com</span>   
             <a href="#"></a>
           </h5>
           <h5 className="mt-5 text-2xl">
             <FontAwesomeIcon className="" icon={faPhone} />
-            <span style={{marginLeft:'10px'}}>Helpline :
+            <span style={{marginLeft:'10px'}}>phone :
             01300000000,01700000000</span>    
           </h5>
         </div>
        
-        <Leaflet style={{ marginLeft: "20%" }}></Leaflet>
+        {/* <Leaflet style={{ marginLeft: "20%" }}></Leaflet> */}
       </div>
     </div>
   );
