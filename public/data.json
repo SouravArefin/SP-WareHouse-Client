@@ -1,43 +1,48 @@
 [
     {
-      "id": 1,
+      
       "img": "https://i.ibb.co/XZJZ27T/services1.jpg",
       "name": "Weight-Loose",
       "Duration" : "6months",
       "details": "By doing this exercise,you will definitely loose your weight",
-      "price": 5000
+      "price": 5000,
+      "quantity": 7
     },
     {
-      "id": 2,
+     
       "img": "https://i.ibb.co/n3BJR0Y/service-2.jpg",
       "name": "Six-packs Abs",
       "Duration" : "5months",
       "details": "By doing this exercise,you will get amazing abs",
-      "price": 7000
+      "price": 7000,
+      "quantity": 8
     },
     {
-      "id": 3,
+      
       "img": "https://i.ibb.co/5vdDJxP/servies-3.jpg",
       "name": "Shoulder-workout",
       "Duration" : "6months",
       "details": "By doing exercise,your shoulder move into a amazing shape ",
-      "price": 12000
+      "price": 12000,
+      "quantity": 9
     },
     {
-      "id": 4,
+      
       "img": "https://i.ibb.co/r52qqdJ/services-5.jpg",
       "name": "Legs-Workout",
       "Duration" : "12months",
       "details": "This workout gives your a amazing legs",
-      "price": 3000 
+      "price": 3000,
+      "quantity": 10
     },
     {
-      "id": 5,
+      
       "img": "https://i.ibb.co/3dsL6jV/ser-6.png",
       "name": "Chest-Workout",
       "Duration" : "6months",
       "details": "This workout gives your a amazing chest shape",
-      "price": 15000    
+      "price": 15000,
+      "quantity": 5  
     }
  
    

@@ -13,7 +13,7 @@ const HomeItem = () => {
             <div className='grid md:grid-cols-3 grid-cols-1 gap-10 container mx-auto my-10 px-8 md:px-0'>
                     { 
                         items.map(item => <ManageItem
-                            key={item.id}
+                            key={item._id}
                             send={item}
                         ></ManageItem>)
                     }
