@@ -14,6 +14,7 @@ import ManageItem from './Components/ManageItems/HomeItem';
 import Items from './Components/Items/Items';
 import Contact from './Components/Contact/Contact';
 import Update from './Components/UpdateItems/Update';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -25,7 +26,15 @@ function App() {
         <Route path='/manageItem' element={<ManageItem />}></Route>
         <Route path='/addItems' element={<AddItems />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
-        <Route path='/contact' element={<Update />}></Route>
+
+       
+        <Route path='/update/:id' element={  
+             <RequireAuth>
+            <Update />
+            </RequireAuth>
+          }></Route>
+       
+        
 
         <Route path='/account' element={<MyAccount />}></Route>
         <Route path='/signin' element={<SignIn />}></Route>

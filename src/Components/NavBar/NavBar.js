@@ -34,7 +34,7 @@ const Navbar = () => {
 
             <div className='flex items-center'>
 
-                <ul className={` w-full md:w-2/3 text-lg py-2 md:flex items-center md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-10 w-full" : "top-[-300px]"}`}>
+                <ul className={` w-full md:w-2/3 text-lg py-2 md:flex items-center md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-10 w-full" : "top-[-350px]"}`}>
                     <div className="logo hidden md:block">
                         <h1 className='cursor-pointer -mt-5 sp-style' onClick={() => navigate('/')}><span className="text-8xl text-orange-800">sp</span><span className="text-xl text-amber-600">WareHouse</span></h1>
                     </div>

@@ -22,8 +22,8 @@ const Home = () => {
                         ></ManageItem>)
                     }
                 </div>
-                <button className="happy" onClick={() => navigate('/review')}>
-                    Happy Clients
+                <button className="happy bg-[#3005ee] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white" onClick={() => navigate('/manageItem')}>
+                    See More
                 </button>
             </div>
         </div>

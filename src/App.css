@@ -18,8 +18,8 @@
     height: 100%;
   
   }
-  .facebook-sign{
-  
+  .happy{
+  margin-left: 45%;
   }
   .active{
     border-bottom: 2px solid red;
@@ -99,6 +99,9 @@
     .slider-body{
       margin-top:10%;
     }
+    .happy{
+      margin-left: 35%;
+      }
   
   }
     
