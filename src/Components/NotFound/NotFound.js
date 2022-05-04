@@ -1,7 +1,11 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import error from '../../error.gif';
+import { auth } from '../../firebase.init';
 const NotFound = () => {
+    const [user] = useAuthState(auth)
+    console.log(user);
     return (
         <>
              

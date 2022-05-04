@@ -8,8 +8,8 @@ const useItemDetail = (id) => {
             fetch(url)
             .then(response => response.json())
         .then(data=>setItem(data))
-    },[item])
-    return {item}
+    },[id])
+    return {item,setItem}
 };
 
 export default useItemDetail;

@@ -10,6 +10,7 @@ import image from '../../no-image.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignIn, faSignOut } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
+
     const [user] = useAuthState(auth)
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
@@ -48,15 +49,15 @@ const Navbar = () => {
                             user ?
                             <>
                                 
-                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-5 text-white font-medium'><Link to="/manageItem">Manage Items</Link></li>
-                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-white font-medium'><Link to="/addItems">Add Items</Link></li>
-                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><Link to="/account">My Items</Link></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-5 text-white font-medium'><NavLink to="/manageItem">Manage Items</NavLink></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-white font-medium'><NavLink to="/addItems">Add Items</NavLink></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><NavLink to="/account">My Items</NavLink></li>
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:ml-10  text-red-500 font-medium' onClick={logout}>Sign Out <FontAwesomeIcon icon={faSignOut} /></li>
                              </>
 
                                 :
                               
-                                <li style={{ cursor: 'pointer' }} className='p-2 md:mx-2 text-blue-500 font-medium'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:mx-2 text-blue-500 font-medium'><NavLink to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></NavLink></li>
                         }
 
 

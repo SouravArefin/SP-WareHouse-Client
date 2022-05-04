@@ -1,15 +1,80 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from 'react-toastify';
 import { auth } from '../../firebase.init';
 import image from '../../no-image.png'
+import { signOut } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import ManageItem from '../ManageItems/ManageItem';
+
+
 const MyAccount = () => {
     const [user] = useAuthState(auth)
     const avater = image
     const userImg = user?.photoURL ? user?.photoURL : avater;
+    const [items, setItems] = useState([])
+    console.log(items);
+    const navigate = useNavigate()
+    const handleDelete = id => {
+        const confirmMsg = window.confirm("Are you sure?")
+
+        if (confirmMsg) {
+            console.log("delete with id", id)
+            
+            
+            fetch(`http://localhost:4000/items/${id}`, {
+                method: 'DELETE',
+
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        const remaining = items.filter(item => item._id !== id);
+                        setItems(remaining);
+                    }
+                })
+            toast('Item delete successfully')
+        }
+        else {
+            toast('ok,No problem')
+        }
+    }
+    useEffect(() => {
+        const getItems = async () => {
+            const email = user?.email
+            const url = `http://localhost:4000/singleItem?email=${email}`
+           
+            try {
+                const { data } = await axios.get(url, {
+                    headers: { 
+                        authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                })
+                
+                setItems(data)
+            } catch (error) {
+                
+                if (error.response.status === 403 || error.response.status === 401) {
+                   signOut(auth)
+                    navigate('/signin')
+                }
+                toast(error.message)
+          }
+        }
+        getItems()
+
+    },[])
+
+
     return (
+        <div>
+ <button style={{ marginTop: '15%'}} className='bg-[#690707] ml-2 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
+        
         <div style={{margin:'20%'}}>
 
-            <h1>Hey {user?.displayName}, Here is your items</h1>
+            
          <div >
             {/* <div className=' flex w-48 items-center absolute top-0 right-0 md:static'>
                 <p className=' font-black '>Name: {user? user.displayName : "Login-first"}</p>
@@ -37,10 +102,30 @@ const MyAccount = () => {
 
 </div>
             </div>
-            
-            
+
+                
+                {
+                    (items.length == 0) ?
+                    
+                    <h1 className='text-5xl sp-style mt-10'>Sorry <span className="text-sky-700">{user?.displayName}!!!  </span>you don't have any items</h1>
+                       
+                        :
+                        <h1 className='text-5xl sp-style mt-10'>Hey <span className="text-sky-700">{user?.displayName}</span>, Here is your items</h1>
+                }
+          
+            <div className='grid md:grid-cols-3 mt-10 grid-cols-1 gap-10 container mx-auto my-10 px-8 md:px-0'>
+            {
+                items.map(item => <ManageItem
+                    key={item._id}
+                send={item}
+                sendEvent={handleDelete}
+                ></ManageItem>)
+            }
+            </div>
+         
+<ToastContainer/>
         </div>
-      
+      </div>
     );
 };
 

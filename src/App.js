@@ -11,7 +11,7 @@ import MyAccount from './Components/MyAccount/MyAccount';
 import Blog from './Components/Blog/Blog';
 import AddItems from './Components/AddItems/AddItems';
 import ManageItem from './Components/ManageItems/HomeItem';
-import Items from './Components/Items/Items';
+
 import Contact from './Components/Contact/Contact';
 import Update from './Components/UpdateItems/Update';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
@@ -23,8 +23,20 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
-        <Route path='/manageItem' element={<ManageItem />}></Route>
-        <Route path='/addItems' element={<AddItems />}></Route>
+        <Route path='/manageItem' element={
+           <RequireAuth>
+            <ManageItem />
+           </RequireAuth>
+          
+          
+        }></Route>
+        <Route path='/addItems' element={
+          <RequireAuth>
+            <AddItems />
+        </RequireAuth>
+          
+          
+        }></Route>
         <Route path='/contact' element={<Contact />}></Route>
 
        
@@ -36,7 +48,11 @@ function App() {
        
         
 
-        <Route path='/account' element={<MyAccount />}></Route>
+        <Route path='/account' element={
+          <RequireAuth>
+          <MyAccount />
+          </RequireAuth>
+        }></Route>
         <Route path='/signin' element={<SignIn />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
         <Route path="*" element={<NotFound />}></Route>
