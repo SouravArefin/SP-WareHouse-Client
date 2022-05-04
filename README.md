@@ -2,6 +2,10 @@
 
 Live site:-[Sp_WareHouse](https://sp-warehouse.firebaseapp.com/).
 
+
+## Description:
+Its a full-stack site. Where user can add,delete,edit items as their need.Also,user can show their profile pic and items which they can add
+
 ## Features of this Website:
 * User Can add any item as their need.
 * User Can Edit any item as their need.
@@ -10,7 +14,7 @@ Live site:-[Sp_WareHouse](https://sp-warehouse.firebaseapp.com/).
 * User can deliver any item
 
 
-## Tools are using:
+## Tools are using in front:
 * Axios
 *  React font-awsome
 * React icons
@@ -21,3 +25,10 @@ Live site:-[Sp_WareHouse](https://sp-warehouse.firebaseapp.com/).
 * React-toastify
 * Swiper js
 * Tailwind css
+
+## Tools are using in Back:
+* MongoDB
+* NodeMon
+* Body-Parser
+* Cors
+* Dotenv
