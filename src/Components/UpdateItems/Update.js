@@ -9,16 +9,14 @@ const Update = () => {
     const { id } = useParams()
     const { item,setItem } = useItemDetail(id)
    const [increase,setIncrease] = useState(0)
-const [reload,SetReload] = useState(false)
+// const [reload,SetReload] = useState(false)
     const handleIncrease = e => {
         setIncrease(e.target.value);
 }
 
     const handleSubmit = e => {
         e.preventDefault();
-        // const name = e.target.name.value;
-        // console.log(name,'name');
-        // const img = e.target.img.value;
+    
         const quantity = parseInt(e.target.quantity.value) 
         
 
@@ -41,7 +39,7 @@ const [reload,SetReload] = useState(false)
                 .then(res => res.json())
                .then(data => {
                    console.log('success', data)
-                   SetReload(!reload)
+                   
                    toast('item restock successfully')
             })
         }
@@ -69,6 +67,7 @@ const [reload,SetReload] = useState(false)
             .then(res => res.json())
            .then(data => {
                console.log('success', data)
+             
                toast('Your item has been delivered')
      
            })

@@ -8,7 +8,7 @@ const useItemDetail = (id) => {
             fetch(url)
             .then(response => response.json())
         .then(data=>setItem(data))
-    },[id])
+    },[item])
     return {item,setItem}
 };
 

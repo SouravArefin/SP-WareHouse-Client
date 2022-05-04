@@ -4,6 +4,7 @@ import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/aut
 import { Navigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { auth } from '../../firebase.init';
+import Spinner from './Spinner';
 
 
 
@@ -14,7 +15,7 @@ const RequireAuth = ({ children }) => {
   //console.log(location);
  // console.log(loading);
   if (loading||sending) {
-    return 
+    return <Spinner/>
   }
   if (!user) {
     // Redirect them to the /login page, but save the current location they were
