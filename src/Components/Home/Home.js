@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import useItems from '../../Hooks/useItems';
 import Carousel from '../Carousel/Carousel';
 import ManageItem from '../ManageItems/ManageItem';
+import WhyMe from '../Why/WhyMe';
 import Review from './Review/Review';
 
 const Home = () => {
@@ -54,7 +55,8 @@ const Home = () => {
                     See More
                 </button>
 
-                <Review style={{marginTop: '5%'}}/>
+                <Review  />
+                <WhyMe />
             </div>
         </div>
     );

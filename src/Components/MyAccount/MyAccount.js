@@ -72,9 +72,8 @@ const MyAccount = () => {
         <div>
  <button style={{ marginTop: '15%'}} className='bg-[#690707] ml-2 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
         
-        <div style={{margin:'20%'}}>
-
-            
+        <div style={{marginTop:'5%',marginLeft: '10%',marginBottom: '10%',marginRight: '10%'}}>
+ 
          <div >
             {/* <div className=' flex w-48 items-center absolute top-0 right-0 md:static'>
                 <p className=' font-black '>Name: {user? user.displayName : "Login-first"}</p>
@@ -107,10 +106,10 @@ const MyAccount = () => {
                 {
                     (items.length == 0) ?
                     
-                    <h1 className='text-5xl sp-style mt-10'>Sorry <span className="text-sky-700">{user?.displayName}!!!  </span>you don't have any items</h1>
+                    <h1 className='text-5xl item-msg sp-style mt-10'>Sorry <span className="text-sky-700">{user?.displayName}!!!  </span>you don't have any items</h1>
                        
                         :
-                        <h1 className='text-5xl sp-style mt-10'>Hey <span className="text-sky-700">{user?.displayName}</span>, Here is your items</h1>
+                        <h1 className='text-5xl item-msg sp-style mt-10'>Hey <span className="text-sky-700">{user?.displayName}</span>, Here is your items</h1>
                 }
           
             <div className='grid md:grid-cols-3 mt-10 grid-cols-1 gap-10 container mx-auto my-10 px-8 md:px-0'>
