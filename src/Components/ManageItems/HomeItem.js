@@ -8,8 +8,9 @@ import Update from '../UpdateItems/Update';
 const HomeItem = () => {
     const {items, setItems} = useItems()
     console.log(items, 'items')
-    
+   
     const handleDelete = id => {
+        
         const confirmMsg = window.confirm("Are you sure?")
 
         if (confirmMsg) {
@@ -34,17 +35,17 @@ const HomeItem = () => {
             toast('ok,No problem')
         }
     }
-    const { id } = useParams()
-    const { item } = useItemDetail(id)
+   
+   
 
 
 
     return (
         <div>
             <button style={{ marginTop: '15%'}} className='bg-[#690707] ml-2 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
-             <div className='mt-28'>
+             <div className='mt-20'>
             <h1 className='serv-head text-3xl text-gray-500 font-medium text-center py-4'>Choose your valuable items..</h1>
-            <h1 className='text-3xl text-green-700 font-medium text-center py-4'>Available in Stock</h1>
+            <h1 className='text-3xl text-green-700 font-medium text-center py-4'>Best quality Items For You</h1>
             <div className='grid md:grid-cols-3 grid-cols-1 gap-10 container mx-auto my-10 px-8 md:px-0'>
                     { 
                         items.map(item => <ManageItem

@@ -6,13 +6,14 @@ import { toast, ToastContainer } from 'react-toastify';
 import { auth } from '../../firebase.init';
 
 
+
 const RequireAuth = ({ children }) => {
     const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
   const [sendEmailVerification, sending, error1] = useSendEmailVerification(auth);
   //console.log(location);
  // console.log(loading);
-  if (loading) {
+  if (loading||sending) {
     return 
   }
   if (!user) {

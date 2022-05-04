@@ -54,7 +54,9 @@ const [reload,SetReload] = useState(false)
 
         const quantityUpdate = item?.quantity 
         console.log(quantityUpdate);
-        const updateQuantity = {quantityUpdate}
+     
+        if (quantityUpdate>0) {
+            const updateQuantity = {quantityUpdate}
         console.log(quantityUpdate);
      
         fetch(`http://localhost:4000/deliver/${id}`, {
@@ -68,8 +70,14 @@ const [reload,SetReload] = useState(false)
            .then(data => {
                console.log('success', data)
                toast('Your item has been delivered')
-        })
+     
+           })
+        }
+        else {
+            toast('Item is out of stock.')
+        }
 }
+
     return (
         <div>
             <button style={{marginTop:'15%',marginLeft:'10%'}}className='bg-[#03aaf7] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'><Link to='/manageItem'>ManageItem</Link>   </button>

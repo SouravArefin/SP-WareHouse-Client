@@ -13,9 +13,11 @@ const AddItems = () => {
         const name = e.target.itemName.value
         const img = e.target.itemImage.value
         const quantity = e.target.quantity.value
+        const price = e.target.price.value
+        const sold = e.target.sold.value
         const supplier = e.target.supplier.value
         const description = e.target.description.value
-        const item = {  email,name,supplier,quantity,img,description, }
+        const item = {  email,name,supplier,price,quantity,sold,img,description, }
         console.log(item)
 
 
@@ -51,10 +53,19 @@ const AddItems = () => {
     <label>Item Image:</label>
                     <input type="text" id="text" name='itemImage' placeholder="give image url" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                 </div>
+                <div className="mb-6">
+    <label>Price:</label>
+                    <input type="number" id="text" name='price' placeholder="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                </div>
    <div className="mb-6">
     <label>Quantity:</label>
                     <input type="number" id="text" name='quantity' placeholder="quantity" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                 </div>
+   <div className="mb-6">
+    <label>Sold:</label>
+                    <input type="number" id="text" name='sold' placeholder="sold" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                </div>
+  
    <div className="mb-6">
     <label>Supplier:</label>
                     <input type="text" id="text" name='supplier' placeholder="supplier-name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
