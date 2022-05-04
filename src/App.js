@@ -40,7 +40,7 @@ function App() {
         <Route path='/contact' element={<Contact />}></Route>
 
        
-        <Route path='/update/:id' element={  
+        <Route path='/inventory/:id' element={  
              <RequireAuth>
             <Update />
             </RequireAuth>

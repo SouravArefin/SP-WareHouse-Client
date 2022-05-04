@@ -11,7 +11,7 @@ const ManageItem = (props) => {
     
     const navigate = useNavigate()
     const handleUpdate = (id) => {
-        navigate(`/update/${id}`)
+        navigate(`/inventory/${id}`)
     }
     let chnageQuantity = quantity <= 0 ? <span className='bg-red-600   p-1  text-white'>Stock-Out</span> : quantity
     console.log(chnageQuantity);

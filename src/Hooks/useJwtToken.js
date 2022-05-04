@@ -11,7 +11,7 @@ const useJwtToken = user => {
             const email = user?.user?.email
             console.log({ email });
             if (email) {
-                const { data } = await axios.post('http://localhost:4000/signin', { email })
+                const { data } = await axios.post('https://powerful-dawn-49608.herokuapp.com/signin', { email })
                 console.log(data.getToken);
                 setToken(data.getToken);
                 localStorage.setItem('token', data.getToken);

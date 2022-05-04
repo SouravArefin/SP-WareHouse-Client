@@ -29,7 +29,7 @@ const Update = () => {
             console.log(newQuantityIncrease,'newQuantityIncrease');
             const updateItem = { newQuantityIncrease }
             
-            fetch(`http://localhost:4000/items/${id}`, {
+            fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -57,7 +57,7 @@ const Update = () => {
             const updateQuantity = {quantityUpdate}
         console.log(quantityUpdate);
      
-        fetch(`http://localhost:4000/deliver/${id}`, {
+        fetch(`https://powerful-dawn-49608.herokuapp.com/deliver/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

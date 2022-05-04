@@ -17,7 +17,7 @@ const HomeItem = () => {
             console.log("delete with id", id)
             
             
-            fetch(`http://localhost:4000/items/${id}`, {
+            fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
                 method: 'DELETE',
 
 

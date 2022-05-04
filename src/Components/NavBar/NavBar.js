@@ -49,7 +49,7 @@ const Navbar = () => {
                             user ?
                             <>
                                 
-                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-5 text-white font-medium'><NavLink to="/manageItem">Manage Items</NavLink></li>
+                                <li style={{ cursor: 'pointer' }} className='p-2 md:ml-5 text-white font-medium'><NavLink to="/manageItem">Manage Inventories</NavLink></li>
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-white font-medium'><NavLink to="/addItems">Add Items</NavLink></li>
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:ml-2 text-green-400 font-medium'><NavLink to="/account">My Items</NavLink></li>
                                 <li style={{ cursor: 'pointer' }} className='p-2 md:ml-10  text-red-500 font-medium' onClick={logout}>Sign Out <FontAwesomeIcon icon={faSignOut} /></li>

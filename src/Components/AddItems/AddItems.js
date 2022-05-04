@@ -21,7 +21,7 @@ const AddItems = () => {
         console.log(item)
 
 
-        fetch('http://localhost:4000/item', {
+        fetch('https://powerful-dawn-49608.herokuapp.com/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
