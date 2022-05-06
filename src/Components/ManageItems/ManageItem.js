@@ -1,8 +1,10 @@
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import useItems from '../../Hooks/useItems';
+
 const ManageItem = (props) => {
     const { _id, name, img,supplier,quantity,description,sold,price, email
     } = props.send
@@ -33,8 +35,15 @@ const ManageItem = (props) => {
         
 
     </div>
-    <button onClick={() => handleUpdate(_id)} className='bg-[#031bf7] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Update</button>
-    <button onClick={() => props.sendEvent(_id)} className='bg-red-600 hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Delete</button>
+                    <button onClick={() => handleUpdate(_id)} className='bg-[#031bf7] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Update
+                    <FontAwesomeIcon className="ml-2" icon={faEdit} ></FontAwesomeIcon>
+                    </button>
+                   
+                   
+                    <button onClick={() => props.sendEvent(_id)} className='bg-red-600 hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Delete
+                    
+                    <FontAwesomeIcon className="ml-2" icon={faTrashAlt} ></FontAwesomeIcon>
+                    </button>
 </div>
 <ToastContainer />
 </div>

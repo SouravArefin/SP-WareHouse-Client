@@ -7,6 +7,8 @@ import { signOut } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ManageItem from '../ManageItems/ManageItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 const MyAccount = () => {
@@ -23,7 +25,7 @@ const MyAccount = () => {
             console.log("delete with id", id)
             
             
-            fetch(`http://localhost:4000/items/${id}`, {
+            fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
                 method: 'DELETE',
 
 
@@ -75,12 +77,11 @@ const MyAccount = () => {
         <div style={{marginTop:'5%',marginLeft: '10%',marginBottom: '10%',marginRight: '10%'}}>
  
          <div >
-            {/* <div className=' flex w-48 items-center absolute top-0 right-0 md:static'>
-                <p className=' font-black '>Name: {user? user.displayName : "Login-first"}</p>
-           <img className="w-10 h-10 rounded-full  ml-3"src={userImg} alt='' />
-                </div> */}
+           
          <div className="custom-shadow">
-  <h1 className='text-center text-3xl pt-5 sp-style'>My Profile:</h1>
+                        <h1 className='text-center text-3xl pt-5 sp-style'>
+                        <FontAwesomeIcon className="mr-5" icon={faUser} ></FontAwesomeIcon>
+                            My Profile:</h1>
   <div className=" items-center mt-10 p-5 ">
                     <img style={{marginLeft: '45%'}}className="w-20 h-20 rounded-full  "src={userImg} alt=''/>
       <div >

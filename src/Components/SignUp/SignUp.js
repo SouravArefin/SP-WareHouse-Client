@@ -8,7 +8,7 @@ import githubLogo from '../../GitHub-Logo.wine.svg'
 import fbLogo from '../../Facebook_i.svg.png'
 import { auth } from '../../firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faEye, faEyeSlash, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from "react-hook-form";
 import {  signInWithPopup,FacebookAuthProvider } from "firebase/auth";
 const SignUp = () => {
@@ -181,7 +181,7 @@ const SignUp = () => {
                     }}
                     
                     />
-                    
+                    <FontAwesomeIcon className="absolute top-0 left-0 mt-5" icon={faEnvelope} ></FontAwesomeIcon>
                     <label htmlFor="floating_email" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
               
                     <p className='text-red-500 text-sm'>{errors?.email?.message}</p>
@@ -200,9 +200,21 @@ const SignUp = () => {
                             trigger('password')
                         }}
                     />
+                    
                     {
-                        show ? <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setShow(!show)} icon={faEyeSlash} />
-                            : <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setShow(!show)}icon={faEye} />
+                        show ?
+                        <>
+                                <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setShow(!show)} icon={faEyeSlash} />
+                                <FontAwesomeIcon className="absolute top-0 left-0 mt-5" icon={faLockOpen} ></FontAwesomeIcon>
+                        </>
+                          
+                            :
+                            <>
+                               <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setShow(!show)} icon={faEye} />
+                            <FontAwesomeIcon className="absolute top-0 left-0 mt-5" icon={faLock} ></FontAwesomeIcon> 
+                            </>
+                            
+                    
                     }
                     
                     <p className='text-red-500 text-sm'>{errors?.password?.message}</p>
@@ -226,9 +238,21 @@ const SignUp = () => {
                     }}
                    
                     />
+                   
                      {
-                        conshow ? <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setConShow(!conshow)} icon={faEyeSlash} />
-                            : <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setConShow(!conshow)}icon={faEye} />
+                        conshow ?
+                        
+                            <>
+                                <FontAwesomeIcon className="absolute top-0 left-0 mt-5" icon={faLockOpen} ></FontAwesomeIcon>
+                                <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setConShow(!conshow)} icon={faEyeSlash} />
+                            </>
+                            
+                            :
+                            <>
+                            <FontAwesomeIcon className="absolute top-0 left-0 mt-5" icon={faLock} ></FontAwesomeIcon>
+                            <FontAwesomeIcon className='absolute top-0 right-0 mt-4' onClick={() => setConShow(!conshow)} icon={faEye} />
+                            </>
+                            
                     }
                     <label htmlFor="floating_repeat_password" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
                 </div>

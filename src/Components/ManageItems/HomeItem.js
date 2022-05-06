@@ -16,10 +16,8 @@ const HomeItem = () => {
         if (confirmMsg) {
             console.log("delete with id", id)
             
-            
             fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
                 method: 'DELETE',
-
 
             })
                 .then(res => res.json())

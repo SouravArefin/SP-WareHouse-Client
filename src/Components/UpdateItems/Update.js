@@ -3,13 +3,14 @@ import { Link, useParams } from 'react-router-dom';
 import useItemDetail from '../../Hooks/useItemDetail'
 import { ToastContainer, toast } from 'react-toastify';
 import useItems from '../../Hooks/useItems'
+
+
 const Update = () => {
-    
     
     const { id } = useParams()
     const { item,setItem } = useItemDetail(id)
    const [increase,setIncrease] = useState(0)
-// const [reload,SetReload] = useState(false)
+
     const handleIncrease = e => {
         setIncrease(e.target.value);
 }
@@ -29,7 +30,8 @@ const Update = () => {
             console.log(newQuantityIncrease,'newQuantityIncrease');
             const updateItem = { newQuantityIncrease }
             
-            fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
+            // fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
+            fetch(`http://localhost:4000/items/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
