@@ -5,8 +5,10 @@ import useItems from '../../Hooks/useItems';
 import Carousel from '../Carousel/Carousel';
 import ManageItem from '../ManageItems/ManageItem';
 import WhyMe from '../Why/WhyMe';
-import Review from './Review/Review';
 
+import Review from './Review/Review';
+import ThreePic from './ThreePic/ThreePic';
+import image from '../../Greenbee/10080.png'
 const Home = () => {
     const { items,setItems } = useItems()
    // console.log(items);
@@ -39,6 +41,9 @@ const Home = () => {
     return (
         <div>
             <Carousel />
+            <ThreePic />
+            <img className='mt-10 mx-auto'src={image} alt=''/>
+            <h1 className='text-center text-gray-500 text-5xl sp-style mt-20'>Best Sold Items</h1>
             <div className='mt-28'>
                 <h1 className='serv-head text-3xl text-gray-500 font-medium text-center py-4'>Choose your valuable items..</h1>
                 <h1 className='text-3xl text-green-700 font-medium text-center py-4'>Available in Stock</h1>

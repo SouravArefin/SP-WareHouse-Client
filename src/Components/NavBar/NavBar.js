@@ -51,11 +51,12 @@ const Navbar = () => {
                     <div className="flex items-center justify-between md:block">
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
-                                <img
+                                {/* <img
                                     className=""
                                     src={logo}
                                     alt="Workflow"
-                                />
+                                /> */}
+                                <h1 className='sp-style text-rose-600'><span className='text-6xl text-lime-700'>Sp</span>  fruits -WareHouse</h1>
                             </div>
                             <div className="hidden md:flex justify-between md:ml-auto">
                                 <div className="nav-item ml-10 flex items-baseline space-x-4 text-lg">

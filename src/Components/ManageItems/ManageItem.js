@@ -1,7 +1,8 @@
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-
+import { AiFillDelete } from 'react-icons/ai'
+import { GrUpdate } from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -15,38 +16,28 @@ const ManageItem = (props) => {
     const handleUpdate = (id) => {
         navigate(`/inventory/${id}`)
     }
-    let chnageQuantity = quantity <= 0 ? <span className='bg-red-600   p-1  text-white'>Stock-Out</span> : quantity
+    let chnageQuantity = quantity <= 0 ? <span className='bg-red-600 rounded-full p-2 ml-2  text-white'>Stock-Out</span> : quantity
     console.log(chnageQuantity);
     return (
-        <div>
 
-
- <div className='custom-shadow py-10 rounded-md'>
-<div style={{ border: "none" }} className="max-w-sm  rounded-lg border text-center">
-    <img className="rounded-t-lg w-2/3 mx-auto hover:scale-110 transform duration-100 ease-linear" src={img} alt="" />
-    <div className="p-5">
-        <h1 className='font-bold'>  Name: {name}</h1>
-
-        <p className="mb-3 font-normal pt-5 text-gray-700 dark:text-gray-400"><span className='font-bold'>Description:</span>    {description} </p>
-        <p><span className='font-bold'>Supplier:</span> {supplier}</p>
-        <p><span className='font-bold'>In-Stock:</span> {chnageQuantity}  </p>
-        <p><span className='font-bold'>Price:</span>BDT {price}/- </p>
-        <p><span className='font-bold'>Sold:</span> {sold}</p>
-        
-
-    </div>
-                    <button onClick={() => handleUpdate(_id)} className='bg-[#031bf7] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Update
-                    <FontAwesomeIcon className="ml-2" icon={faEdit} ></FontAwesomeIcon>
-                    </button>
-                   
-                   
-                    <button onClick={() => props.sendEvent(_id)} className='bg-red-600 hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Delete
-                    
-                    <FontAwesomeIcon className="ml-2" icon={faTrashAlt} ></FontAwesomeIcon>
-                    </button>
-</div>
-<ToastContainer />
-</div>
+     <div>
+     
+            <div className='cursor-pointer rounded-lg bg-white px-5'>
+            <img className="rounded-t-lg w-2/3 mx-auto hover:scale-110 transform duration-100 ease-linear" src={img} alt="" />
+            <div className="spacer w-full bg-[#6D9900]"></div>
+            <div className='text-center mt-3'>
+                <h1 className='text-lg md:text-xl font-bold text-gray-600 mb-1'>{name}</h1>
+                    <h1 className='text-lg md:text-xl font-bold text-gray-600 mb-1'>Supplier:{supplier}</h1>
+                <p className='font-bold text-[#6D9900] mb-3'>Price: BDT {price}/-</p>
+                    <p className='font-bold text-[#5f57a8] mb-3'>In-Stock:{chnageQuantity}</p>
+                    <p className='font-bold text-[#233002] mb-3'>Sold:{sold}</p>
+                <p className='text-[#707070] line-height'> Description:{description} </p>
+            </div>
+            <div className='flex justify-evenly mt-5'>
+                <button onClick={() => props.sendEvent(_id)} className='nav-btn font-bold text-md flex items-center'><AiFillDelete></AiFillDelete><span className='font-bold text-md ml-1'>Delete</span></button>
+                <button onClick={() => handleUpdate(_id)}className='nav-btn font-bold text-md flex items-center'><GrUpdate></GrUpdate><span className='font-bold text-md ml-1'>Update</span></button>
+            </div>
+        </div>
         </div>
        
     );
