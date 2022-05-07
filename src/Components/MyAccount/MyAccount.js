@@ -37,10 +37,10 @@ const MyAccount = () => {
                         setItems(remaining);
                     }
                 })
-            toast('Item delete successfully')
+            toast.success('Item delete successfully')
         }
         else {
-            toast('ok,No problem')
+            toast.error('ok,No problem')
         }
     }
     useEffect(() => {

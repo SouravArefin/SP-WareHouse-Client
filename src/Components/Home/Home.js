@@ -9,6 +9,7 @@ import ManageItem from '../ManageItems/ManageItem';
 
 import ThreePic from './ThreePic/ThreePic';
 import image from '../../Greenbee/10080.png'
+import BestSell from './BestSell/BestSell';
 const Home = () => {
     const { items,setItems } = useItems()
    // console.log(items);
@@ -31,17 +32,17 @@ const Home = () => {
                     setItems(remaining);
                 }
             })
-        toast('Item delete successfully')
+        toast.success('Item delete successfully')
     }
     else {
-        toast('ok,No problem')
+        toast.error('ok,No problem')
     }
 }
     const navigate=useNavigate()
     return (
         <div>
             <Carousel />
-            <ThreePic />
+           
             <img className='mt-10 mx-auto'src={image} alt=''/>
            
             <div className='mt-28'>
@@ -59,7 +60,8 @@ const Home = () => {
                     See More
                 </button>
 
-                
+                <BestSell />
+                <ThreePic />
             </div>
         </div>
     );

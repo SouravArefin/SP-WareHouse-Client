@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,useNavigate } from 'react-router-dom';
 import useItemDetail from '../../Hooks/useItemDetail'
 import { ToastContainer, toast } from 'react-toastify';
 import useItems from '../../Hooks/useItems'
@@ -10,7 +10,7 @@ const Update = () => {
     const { id } = useParams()
     const { item,setItem } = useItemDetail(id)
    const [increase,setIncrease] = useState(0)
-
+const navigate= useNavigate()
     const handleIncrease = e => {
         setIncrease(e.target.value);
 }
@@ -22,7 +22,7 @@ const Update = () => {
         
 
         if (!quantity) {
-            toast('Insert quantity number')
+            toast.error('Insert quantity number')
         }
         else {
             const newQuantityIncrease =  parseInt(quantity)+ parseInt(item?.quantity)
@@ -30,8 +30,8 @@ const Update = () => {
             console.log(newQuantityIncrease,'newQuantityIncrease');
             const updateItem = { newQuantityIncrease }
             
-            // fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
-            fetch(`http://localhost:4000/items/${id}`, {
+             fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
+           // fetch(`http://localhost:4000/items/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -42,7 +42,7 @@ const Update = () => {
                .then(data => {
                    console.log('success', data)
                    
-                   toast('item restock successfully')
+                   toast.success('This fruit restock successfully')
             })
         }
        
@@ -70,12 +70,12 @@ const Update = () => {
            .then(data => {
                console.log('success', data)
              
-               toast('Your item has been delivered')
+               toast.success('This fruit has been delivered')
      
            })
         }
         else {
-            toast('Item is out of stock.')
+            toast.error('Sorry!! This fruit is out of stock.')
         }
 }
 
@@ -103,7 +103,7 @@ const Update = () => {
                 <div className='flex items-center'>
     
             <button className='mx-auto mt-5 text-white bg-[#f00606] border-2 border-transparent  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' onClick={() => handleDeliver(id)}>Deliver</button>
-                <button className=' mt-5  ml-2 text-white bg-[#1303f7] border-2 border-transparent hover:border-2  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' ><Link to='/manageItem'>ManageItem</Link> </button>
+                <button onClick={() =>navigate('/manageItem')}className=' mt-5  ml-2 text-white bg-[#1303f7] border-2 border-transparent hover:border-2  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' >ManageItem </button>
        
              </div>
         </div>

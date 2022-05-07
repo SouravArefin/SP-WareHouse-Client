@@ -1,10 +1,11 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { auth } from '../../firebase.init';
 
 const AddItems = () => {
-
+const navigate = useNavigate()
     const [user] = useAuthState(auth)
     const handleSubmit = e => {
         e.preventDefault();
@@ -31,13 +32,13 @@ const AddItems = () => {
             .then(res => res.json())
            .then(data => {
                console.log('success', data)
-               toast('item added successfully')
+               toast.success('Congrats!!New Fruit added successfully')
         })
 
         e.target.reset()
     };
     return (
-        <div style={{margin: '20%' }}>
+        <div style={{marginRight:'10%'}} className='mt-10 ml-36 '>
             <form onSubmit={handleSubmit}>
              
                 <div className="mb-6">
@@ -79,6 +80,7 @@ const AddItems = () => {
 
   <input type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"value='Add'/>
             </form>
+            <button onClick={() =>navigate('/manageItem')}className=' mt-5  ml-2 text-white bg-[#1303f7] border-2 border-transparent hover:border-2  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' >ManageItem </button>
             <ToastContainer/>
         </div>
     );

@@ -14,7 +14,7 @@ const HomeItem = () => {
         const confirmMsg = window.confirm("Are you sure?")
 
         if (confirmMsg) {
-            console.log("delete with id", id)
+            
             
             fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
                 method: 'DELETE',
@@ -27,7 +27,7 @@ const HomeItem = () => {
                         setItems(remaining);
                     }
                 })
-            toast('Item delete successfully')
+            toast('This Fruit delete successfully')
         }
         else {
             toast('ok,No problem')

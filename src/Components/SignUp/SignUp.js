@@ -13,12 +13,7 @@ import { useForm } from "react-hook-form";
 import {  signInWithPopup,FacebookAuthProvider } from "firebase/auth";
 const SignUp = () => {
     const { register, handleSubmit, watch, formState: { errors },trigger } = useForm();
-    // const [email, setEmail] = useState(' ')
-    // const [firstName, setFirstName] = useState(' ')
-    // const [lastName, setLastName] = useState(' ')
-    // const [password, setPassword] = useState(' ')
-    // const [confirmPassword, setConfirmPassword] = useState(' ')
-    // const [error, setError] = useState('')
+  
     const [show, setShow] = useState(false)
     const [conshow, setConShow] = useState(false)
     const [userFB,setUser]=useState({})
@@ -28,7 +23,6 @@ const SignUp = () => {
         loading
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
    
-    
    
     console.log(user)
     
@@ -56,7 +50,7 @@ const SignUp = () => {
             return;
         }
 
-        toast('Profile create successfully');
+        toast.success('Profile create successfully');
         
            await createUserWithEmailAndPassword(e.email, e.password)
         await updateProfile({ displayName: fullName });
