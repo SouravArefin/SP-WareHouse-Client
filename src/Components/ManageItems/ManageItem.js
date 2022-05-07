@@ -9,7 +9,7 @@ import { toast, ToastContainer } from 'react-toastify';
 const ManageItem = (props) => {
     const { _id, name, img,supplier,quantity,description,sold,price, email
     } = props.send
-    console.log(props.send);
+    //console.log(props.send);
     //const {items, setItems} = useItems()
     
     const navigate = useNavigate()
@@ -17,7 +17,7 @@ const ManageItem = (props) => {
         navigate(`/inventory/${id}`)
     }
     let chnageQuantity = quantity <= 0 ? <span className='bg-red-600 rounded-full p-2 ml-2  text-white'>Stock-Out</span> : quantity
-    console.log(chnageQuantity);
+    //console.log(chnageQuantity);
     return (
 
      <div className='shadow-xl'>

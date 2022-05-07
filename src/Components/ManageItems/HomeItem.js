@@ -43,6 +43,7 @@ const HomeItem = () => {
            
              <div className='mt-20'>
             <h1 className='serv-head text-3xl text-gray-500 font-medium text-center py-4'>Fruits Collection</h1>
+                <h1 className='serv-head text-2xl text-gray-500 font-medium text-center py-4'>Total Fruits : {items.length} </h1>
 
             <div className='grid md:grid-cols-3 grid-cols-1 gap-10 container mx-auto my-10 px-8 md:px-0'>
                     { 

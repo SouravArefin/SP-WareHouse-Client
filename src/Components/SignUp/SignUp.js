@@ -11,9 +11,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { faEnvelope, faEye, faEyeSlash, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from "react-hook-form";
 import {  signInWithPopup,FacebookAuthProvider } from "firebase/auth";
+import axios from 'axios';
+import useJwtToken from '../../Hooks/useJwtToken';
 const SignUp = () => {
     const { register, handleSubmit, watch, formState: { errors },trigger } = useForm();
-  
+  const [user4] = useAuthState(auth)
     const [show, setShow] = useState(false)
     const [conshow, setConShow] = useState(false)
     const [userFB,setUser]=useState({})
@@ -24,27 +26,28 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
    
    
-    console.log(user)
+   // console.log(user)
     
     const [signInWithGoogle, user2,loading2, error2] = useSignInWithGoogle(auth)
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
     const [updateProfile, updating, error3] = useUpdateProfile(auth);
-   
-    console.log(user2,'signup')
-   
+    const allUser = user2||user1||user
+    const [token] = useJwtToken(allUser)
+    //console.log(user2,'signup')
+  
     
     const navigate = useNavigate()
     const location = useLocation()
-    
     const from = location?.state?.from?.pathname || '/'
+    if (token) {
+        navigate(from, { replace: true })
+    }
+    
    
     const handleCreateUser = async e => {
-        
-      
-      
         const fullName = e.firstname + '' + e.lastname;
        console.log(e.firstname +''+e.lastname)
-       console.log(e,"eeeeeee");
+      // console.log(e,"eeeeeee");
         if (e.password !=e.confirmPassword) {
             toast.error("password didn't match")
             return;
@@ -54,12 +57,9 @@ const SignUp = () => {
         
            await createUserWithEmailAndPassword(e.email, e.password)
         await updateProfile({ displayName: fullName });
-   
-        
-            navigate('/')
-    
-           
-     
+
+        navigate('/')
+
     }
    
  // react-firebase-hooks
@@ -68,9 +68,9 @@ const SignUp = () => {
  
  const handleGoogleSignIn = () =>{
     signInWithGoogle()
-    .then( () =>{
-        navigate(from, {replace: true})
-    })
+     if (user4) {
+      navigate('/')
+  }
     }
     const facebookProvider = new FacebookAuthProvider();
     const handleFacebookSignIn = () => {

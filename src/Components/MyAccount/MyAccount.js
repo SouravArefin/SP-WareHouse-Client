@@ -16,13 +16,13 @@ const MyAccount = () => {
     const avater = image
     const userImg = user?.photoURL ? user?.photoURL : avater;
     const [items, setItems] = useState([])
-    console.log(items);
+    //console.log(items);
     const navigate = useNavigate()
     const handleDelete = id => {
         const confirmMsg = window.confirm("Are you sure?")
 
         if (confirmMsg) {
-            console.log("delete with id", id)
+            //console.log("delete with id", id)
             
             
             fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
