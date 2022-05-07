@@ -85,13 +85,13 @@ const navigate= useNavigate()
 
             <div className='flex flex-col justify-around items-center py-5 coin-card rounded-lg'>
             <img className='w-1/4 hover:scale-110 transform duration-100 ease-linear' src={item?.img} alt="" />
-            <div>
+            <div className='text-center'>
                 <h1 className='text-3xl sp-style font-bold text-gray-600'>{item?.name}</h1>
                 <h1 className='text-xl sp-style  font-bold text-gray-600'>Supplier:{item?.supplier}</h1>
                 <h1 className='text-2xl sp-style  mt-2 font-bold text-[#6D9900]'>Price: BDT {item?.price}/-</h1>
                 <h1 className='text-xl sp-style  font-bold text-sky-600'>In-stock:{item?.quantity}</h1>
                 <h1 className=' font-bold sp-style'>Sold:{item?.sold}</h1>
-                <h1 className=' font-bold sp-style text-gray-600'>Description:{item?.description}</h1>
+                <h1 className=' font-bold sp-style w-1/2 mx-auto text-gray-600'>{item?.description}</h1>
                
             </div>
             <form onSubmit={handleSubmit}>

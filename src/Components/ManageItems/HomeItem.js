@@ -27,10 +27,10 @@ const HomeItem = () => {
                         setItems(remaining);
                     }
                 })
-            toast('This Fruit delete successfully')
+            toast.success('This Fruit delete successfully')
         }
         else {
-            toast('ok,No problem')
+            toast.error('ok,No problem')
         }
     }
    

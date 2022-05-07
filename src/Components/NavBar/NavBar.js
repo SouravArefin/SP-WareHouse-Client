@@ -13,6 +13,7 @@ import logo from '../../Greenbee/10001.png'
 import { BsFacebook, BsTwitter, BsInstagram } from 'react-icons/bs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignIn, faSignOut } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
 const Navbar = () => {
 
     const [user] = useAuthState(auth)
@@ -21,6 +22,7 @@ const Navbar = () => {
 
     const logout = () => {
         signOut(auth);
+        toast.success('Sign-Out Success.Bye Bye!!')
     };
     console.log(user)
 

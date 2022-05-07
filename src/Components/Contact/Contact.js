@@ -29,8 +29,11 @@ const Contact = () => {
             01300000000,01700000000</span>    
           </h5>
         </div>
-       
+        <div>
+        
         {/* <Leaflet style={{ marginLeft: "20%" }}></Leaflet> */}
+        </div>
+        
       </div>
     </div>
   );
