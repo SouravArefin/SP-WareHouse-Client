@@ -81,41 +81,36 @@ const Update = () => {
 
     return (
         <div>
-            <button style={{marginTop:'15%',marginLeft:'10%'}}className='bg-[#03aaf7] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'><Link to='/manageItem'>ManageItem</Link>   </button>
-            <div style={{ margin: '10%' }}>
-                <div style={{ paddingLeft: '30%', paddingTop: '10%', paddingBottom: '10%' }} className='custom-shadow  rounded-md'>
+  
 
-                    <div style={{ border: "none" }} className="max-w-sm  rounded-lg border text-center">
-                        <img className="rounded-t-lg w-2/3 mx-auto" src={item?.img} alt="" />
-                        <div className="p-5">
-                            <h1 className='font-bold'>  Name: {item?.name}</h1>
-
-                            <p className="mb-3 font-normal pt-5 text-gray-700 dark:text-gray-400"><span className='font-bold'>Description:</span>{item?.description} </p>
-                            <p><span className='font-bold'>Supplier:</span>  {item?.supplier}</p>
-                            <p><span className='font-bold'>quantity:</span> {item?.quantity}</p>
-            
-
-                        </div>
-                        <button onClick={() => handleDeliver(id)} className='bg-[#f75c03] hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white'>Delivered</button>
-                        
-                        <form onSubmit={handleSubmit}>
-                <div className="mb-6">
-    
-              <input onBlur={handleIncrease}type="number" id="text" name='quantity' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-  </div>
-  <input type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"value='Restock'/>
-                </form>
-                    </div>
-
+            <div className='flex flex-col justify-around items-center py-5 coin-card rounded-lg'>
+            <img className='w-1/4 hover:scale-110 transform duration-100 ease-linear' src={item?.img} alt="" />
+            <div>
+                <h1 className='text-3xl sp-style font-bold text-gray-600'>{item?.name}</h1>
+                <h1 className='text-xl sp-style  font-bold text-gray-600'>Supplier:{item?.supplier}</h1>
+                <h1 className='text-2xl sp-style  mt-2 font-bold text-[#6D9900]'>Price: BDT {item?.price}/-</h1>
+                <h1 className='text-xl sp-style  font-bold text-sky-600'>In-stock:{item?.quantity}</h1>
+                <h1 className=' font-bold sp-style'>Sold:{item?.sold}</h1>
+                <h1 className=' font-bold sp-style text-gray-600'>Description:{item?.description}</h1>
+               
+            </div>
+            <form onSubmit={handleSubmit}>
+                <div class="mt-3 flex items-center">
+                    <input  type="number" name='quantity' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                    <input className='ml-2 text-white bg-[#f37b0b] border-2 border-transparent  font-medium hover:font-medium px-5 py-2 cursor-pointer rounded-md' type="submit" value="Restock" />
                 </div>
-            </div>
+                </form>  
+                <div className='flex items-center'>
+    
+            <button className='mx-auto mt-5 text-white bg-[#f00606] border-2 border-transparent  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' onClick={() => handleDeliver(id)}>Deliver</button>
+                <button className=' mt-5  ml-2 text-white bg-[#1303f7] border-2 border-transparent hover:border-2  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' ><Link to='/manageItem'>ManageItem</Link> </button>
+       
+             </div>
+        </div>
 
 
 
-            <div style={{ margin: '20%' }}>
             
-   
-            </div>
             <ToastContainer />
         </div>
 

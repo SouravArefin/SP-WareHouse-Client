@@ -40,10 +40,10 @@ const HomeItem = () => {
 
     return (
         <div>
-            <button style={{ marginTop: '15%'}} className='bg-[#690707] ml-2 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
+           
              <div className='mt-20'>
-            <h1 className='serv-head text-3xl text-gray-500 font-medium text-center py-4'>Choose your valuable items..</h1>
-            <h1 className='text-3xl text-green-700 font-medium text-center py-4'>Best quality Items For You</h1>
+            <h1 className='serv-head text-3xl text-gray-500 font-medium text-center py-4'>Fruits Collection</h1>
+
             <div className='grid md:grid-cols-3 grid-cols-1 gap-10 container mx-auto my-10 px-8 md:px-0'>
                     { 
                         items.map(item => <ManageItem
@@ -53,7 +53,8 @@ const HomeItem = () => {
                         ></ManageItem>)
                     }
                    
-            </div>
+                </div>
+                <button  className='bg-[#690707] ml-10 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
         </div>
         </div>
     );

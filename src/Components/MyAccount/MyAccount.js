@@ -72,7 +72,7 @@ const MyAccount = () => {
 
     return (
         <div>
- <button style={{ marginTop: '15%'}} className='bg-[#690707] ml-2 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
+
         
         <div style={{marginTop:'5%',marginLeft: '10%',marginBottom: '10%',marginRight: '10%'}}>
  
@@ -121,7 +121,8 @@ const MyAccount = () => {
                 sendEvent={handleDelete}
                 ></ManageItem>)
             }
-            </div>
+                </div>
+                <button  className='bg-[#690707] ml-2 hover:bg-[#141414]  px-4 py-2 mb-2  text-white'><Link to='/addItems'>Add New Items</Link></button>
          
 <ToastContainer/>
         </div>

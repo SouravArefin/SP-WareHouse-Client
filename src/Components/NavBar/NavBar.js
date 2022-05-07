@@ -98,9 +98,9 @@ const Navbar = () => {
                                 </div>
                                 {
                                     user ?
-                                        <button onClick={logout} className='md:ml-24 text-red-700 bg-[#6D9900] border-2 border-transparent hover:border-2 hover:border-[#6D9900] hover:bg-transparent hover:text-red-700 transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-1 rounded-md'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                        <button onClick={logout} className='md:ml-24 text-red-700 bg-[#161615] border-2 border-transparent  font-medium hover:font-medium px-5 py-1 rounded-md'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                         :
-                                        <button  className='md:ml-24 text-sky-700 bg-[#6D9900] border-2 border-transparent hover:border-2 hover:border-[#6D9900] hover:bg-transparent hover:text-sky-400 transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-1 rounded-md'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
+                                        <button  className='md:ml-24 text-sky-400 bg-[#161615] border-2 border-transparent  :150ms font-medium hover:font-medium px-5 py-1 rounded-md'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
                                         
                                 }
                                
@@ -109,9 +109,9 @@ const Navbar = () => {
                         <div className="-mr-2 flex md:hidden">
                         {
                                     user ?
-                                        <button onClick={logout} className='md:ml-24 text-red-700 bg-[#6D9900] border-2 border-transparent hover:border-2 hover:border-[#6D9900] hover:bg-transparent hover:text-red-700 transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-1 rounded-md'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                        <button onClick={logout} className='md:ml-24 text-red-700 bg-[#0d0e0d] border-2 border-transparent font-medium hover:font-medium px-5 py-1 rounded-md'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                         :
-                                        <button  className='md:ml-24 text-blue-600 bg-[#6D9900] border-2 border-transparent hover:border-2 hover:border-[#6D9900] hover:bg-transparent hover:text-blue-400 transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-1 rounded-md'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
+                                        <button  className='md:ml-24 text-sky-400 bg-[#141414] border-2 border-transparent font-medium hover:font-medium px-5 py-1 rounded-md'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
                                         
                                 }
                             <button
@@ -162,8 +162,8 @@ const Navbar = () => {
 
                 <Transition
                     show={isOpen}
-                    enter="transition ease-out duration-100 transform"
-                    enterFrom="opacity-0 scale-95"
+                    enter="transition ease-out duration-400 transform"
+                    enterFrom="opacity-0 scale-50"
                     enterTo="opacity-100 scale-100"
                     leave="transition ease-in duration-75 transform"
                     leaveFrom="opacity-100 scale-100"
@@ -194,9 +194,9 @@ const Navbar = () => {
                                 {
                                     user && 
                                     <>
-                                        <NavLink  className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" to="/manageItem">Manage Inventories</NavLink>
+                                        <NavLink  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" to="/manageItem">Manage Inventories</NavLink>
                                             <NavLink to='/addItems' className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Items</NavLink>
-                                            <NavLink  className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"to="/account">My Items</NavLink>
+                                            <NavLink  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"to="/account">My Items</NavLink>
                                     </>
                                  
                                     

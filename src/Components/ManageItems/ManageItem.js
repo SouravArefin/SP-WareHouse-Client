@@ -20,24 +20,25 @@ const ManageItem = (props) => {
     console.log(chnageQuantity);
     return (
 
-     <div>
+     <div className='shadow-xl'>
      
             <div className='cursor-pointer rounded-lg bg-white px-5'>
             <img className="rounded-t-lg w-2/3 mx-auto hover:scale-110 transform duration-100 ease-linear" src={img} alt="" />
             <div className="spacer w-full bg-[#6D9900]"></div>
             <div className='text-center mt-3'>
-                <h1 className='text-lg md:text-xl font-bold text-gray-600 mb-1'>{name}</h1>
-                    <h1 className='text-lg md:text-xl font-bold text-gray-600 mb-1'>Supplier:{supplier}</h1>
-                <p className='font-bold text-[#6D9900] mb-3'>Price: BDT {price}/-</p>
-                    <p className='font-bold text-[#5f57a8] mb-3'>In-Stock:{chnageQuantity}</p>
-                    <p className='font-bold text-[#233002] mb-3'>Sold:{sold}</p>
-                <p className='text-[#707070] line-height'> Description:{description} </p>
+                <h1 className=' sp-style  text-lg md:text-xl font-bold text-gray-600 mb-1'>{name}</h1>
+                    <h1 className='sp-style  text-lg md:text-xl font-bold text-gray-600 mb-1'>Supplier:{supplier}</h1>
+                <p className='sp-style  font-bold text-[#6D9900] mb-3'>Price: BDT {price}/-</p>
+                    <p className='font-bold sp-style text-[#5f57a8] mb-3'>In-Stock:{chnageQuantity}</p>
+                    <p className='sp-style  font-bold text-[#233002] mb-3'>Sold:{sold}</p>
+                <p className=' sp-style text-[#707070] line-height'title={description}>{description.slice(0, 150)}...  </p>
             </div>
-            <div className='flex justify-evenly mt-5'>
-                <button onClick={() => props.sendEvent(_id)} className='nav-btn font-bold text-md flex items-center'><AiFillDelete></AiFillDelete><span className='font-bold text-md ml-1'>Delete</span></button>
-                <button onClick={() => handleUpdate(_id)}className='nav-btn font-bold text-md flex items-center'><GrUpdate></GrUpdate><span className='font-bold text-md ml-1'>Update</span></button>
+            <div className='flex justify-evenly mt-5 mb-10'>
+                <button onClick={() => props.sendEvent(_id)} className='nav-btn font-bold text-md flex items-center'><AiFillDelete className='text-red-700'></AiFillDelete><span className='font-bold text-md ml-1 text-red-700'>Delete</span></button>
+                <button onClick={() => handleUpdate(_id)}className='nav-btn font-bold text-md flex items-center'><GrUpdate className='text-sky-700'></GrUpdate><span className='font-bold text-md ml-1 text-sky-700'>Update</span></button>
             </div>
-        </div>
+            </div>
+            <ToastContainer/>
         </div>
        
     );
