@@ -1,13 +1,16 @@
 [
     {
-      
-      "img": "https://i.ibb.co/XZJZ27T/services1.jpg",
-      "name": "Weight-Loose",
-      "Duration" : "6months",
-      "details": "By doing this exercise,you will definitely loose your weight",
-      "price": 5000,
-      "quantity": 7
-    },
+      "email":"khansourav509@gmail.com",
+"name":"Lemon",
+"supplier":"Ayon-Jodder",
+"price":"19",
+"quantity":65,
+"sold":17,
+"img"
+:"https://i.ibb.co/n3qwD3y/10031.jpg",
+"description":"Lemon is a rich source of vitamin C, providing 64% of the Daily Value ..."
+     
+},
     {
      
       "img": "https://i.ibb.co/n3BJR0Y/service-2.jpg",

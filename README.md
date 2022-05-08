@@ -4,7 +4,7 @@ Live site:-[Sp_WareHouse](https://sp-warehouse.firebaseapp.com/).
 
 
 ## Description:
-Its a full-stack site. Where user can add,delete,edit items as their need.Also,user can show their profile pic and items which they can add
+Sp_wareHouse is a site of fruits warehouse.When user entered the home page,they will see our site banner,Top 6 fruits in our warehouse,top sell fruits,supplier information etc.When user login in the site they will see many features.like items add,delete,update etc.They can controll it
 
 ## Features of this Website:
 * User Can add any item as their need.
