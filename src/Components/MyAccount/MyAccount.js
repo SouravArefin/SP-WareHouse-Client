@@ -110,7 +110,7 @@ const MyAccount = () => {
                     <h1 className='text-5xl item-msg sp-style mt-10'>Sorry <span className="text-sky-700">{user?.displayName}!!!  </span>you don't have any items</h1>
                        
                         :
-                        <h1 className='text-5xl item-msg sp-style mt-10'>Hey <span className="text-sky-700">{user?.displayName}</span>, Here is your items</h1>
+                        <h1 className='text-5xl item-msg sp-style mt-10'>Hey <span className="text-sky-700">{user?.displayName}</span>,You added {items.length} items . Here is your items</h1>
                 }
           
             <div className='grid md:grid-cols-3 mt-10 grid-cols-1 gap-10 container mx-auto my-10 px-8 md:px-0'>
