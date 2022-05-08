@@ -26,7 +26,10 @@ const ManageItem = (props) => {
      <div className='shadow-xl'>
      
             <div className='cursor-pointer rounded-lg bg-white px-5'>
-            <img className="rounded-t-lg w-2/3 mx-auto hover:scale-110 transform duration-100 ease-linear" src={img} alt="" />
+                <img className="rounded-t-lg w-2/3 mx-auto hover:scale-110 transform duration-100 ease-linear mb-5" src={img} alt=""  />
+                <div className='card-border w-full  bg-[#6D9900] '>
+
+                </div>
             <div className="spacer w-full bg-[#6D9900]"></div>
             <div className='text-center mt-3'>
                 <h1 className=' sp-style  text-lg md:text-xl font-bold text-gray-600 mb-1'>{name}</h1>

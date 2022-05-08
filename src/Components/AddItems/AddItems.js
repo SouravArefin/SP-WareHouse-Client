@@ -38,7 +38,9 @@ const navigate = useNavigate()
         e.target.reset()
     };
     return (
-        <div style={{marginRight:'10%'}} className='mt-10 ml-36 '>
+        <>
+            <h1 className='sp-style text-green-700 mt-10 text-3xl text-center'>Fill your Product Stock</h1>
+        <div style={{marginRight:'10%'}} className='form-style mt-10 ml-36 '>
             <form onSubmit={handleSubmit}>
              
                 <div className="mb-6">
@@ -75,14 +77,16 @@ const navigate = useNavigate()
     <label>Description:</label>
                     <textarea rows="10" cols="80"type="text" id="text" name='description' placeholder="write about the items" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                 </div>
-                
-
-
-  <input type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"value='Add'/>
+                <div className='text-center'>
+                <input type="submit" className="text-white bg-[#445e05]  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm md:w-1/5 w-1/2 px-5 py-2.5 text-center dark:bg-blue-600  dark:focus:ring-blue-800"value='Add'/>
+                    </div>
+               
             </form>
-            <button onClick={() =>navigate('/manageItem')}className=' mt-5  ml-2 text-white bg-[#1303f7] border-2 border-transparent hover:border-2  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' >ManageItem </button>
+            <button onClick={() =>navigate('/manageItem')}className=' mt-5  ml-2 text-white bg-[#2B3A05] border-2 border-transparent hover:border-2  font-medium hover:font-medium px-10 py-2 cursor-pointer rounded-md' >ManageItem </button>
             <ToastContainer/>
         </div>
+        </>
+        
     );
 };
 
