@@ -52,19 +52,21 @@ const navigate= useNavigate()
     
     const handleDeliver = id => {
 
-        const quantityUpdate = item?.quantity 
+        
+        
+        if (item?.quantity> 0) {
+            const quantityUpdate = parseInt(item?.quantity)-1
+        console.log(quantityUpdate);
+        const soldUpdate = parseInt(item?.sold) +1
+           
         console.log(quantityUpdate);
      
-        if (quantityUpdate>0) {
-            const updateQuantity = {quantityUpdate}
-        console.log(quantityUpdate);
-     
-        fetch(`https://powerful-dawn-49608.herokuapp.com/deliver/${id}`, {
+        fetch(`http://localhost:4000/deliver/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(updateQuantity)
+            body: JSON.stringify({quantityUpdate,soldUpdate})
          })
             .then(res => res.json())
            .then(data => {
