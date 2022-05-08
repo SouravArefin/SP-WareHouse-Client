@@ -61,7 +61,8 @@ const navigate= useNavigate()
            
         console.log(quantityUpdate);
      
-        fetch(`http://localhost:4000/deliver/${id}`, {
+        fetch(`https://powerful-dawn-49608.herokuapp.com/deliver/${id}`, {
+        // fetch(`http://localhost:4000/deliver/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
