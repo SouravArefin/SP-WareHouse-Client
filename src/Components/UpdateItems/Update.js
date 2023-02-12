@@ -30,8 +30,8 @@ const navigate= useNavigate()
             console.log(newQuantityIncrease,'newQuantityIncrease');
             const updateItem = { newQuantityIncrease }
             
-             fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
-           // fetch(`http://localhost:4000/items/${id}`, {
+             fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
+           // fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -61,8 +61,8 @@ const navigate= useNavigate()
            
         console.log(quantityUpdate);
      
-        fetch(`https://powerful-dawn-49608.herokuapp.com/deliver/${id}`, {
-        // fetch(`http://localhost:4000/deliver/${id}`, {
+        fetch(`https://sp-warehouse-server.up.railway.app/deliver/${id}`, {
+        // fetch(`https://sp-warehouse-server.up.railway.app/deliver/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -22,7 +22,7 @@ const navigate = useNavigate()
         console.log(item)
 
 
-        fetch('https://powerful-dawn-49608.herokuapp.com/item', {
+        fetch('https://sp-warehouse-server.up.railway.app/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

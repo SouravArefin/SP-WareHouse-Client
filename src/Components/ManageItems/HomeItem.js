@@ -16,7 +16,7 @@ const HomeItem = () => {
         if (confirmMsg) {
             
             
-            fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
+            fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
                 method: 'DELETE',
 
             })

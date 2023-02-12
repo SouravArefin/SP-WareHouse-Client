@@ -4,8 +4,8 @@ const useItemDetail = (id) => {
     
     const [item, setItem] = useState([]);  
     useEffect(() => {
-           const url = `https://powerful-dawn-49608.herokuapp.com/items/${id}`
-           // const url = `http://localhost:4000/items/${id}`
+           const url = `https://sp-warehouse-server.up.railway.app/items/${id}`
+           // const url = `https://sp-warehouse-server.up.railway.app/items/${id}`
             fetch(url)
             .then(response => response.json())
         .then(data=>setItem(data))

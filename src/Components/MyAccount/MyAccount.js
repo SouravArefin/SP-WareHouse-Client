@@ -25,7 +25,7 @@ const MyAccount = () => {
             //console.log("delete with id", id)
             
             
-            fetch(`https://powerful-dawn-49608.herokuapp.com/items/${id}`, {
+            fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
                 method: 'DELETE',
 
 
@@ -46,7 +46,7 @@ const MyAccount = () => {
     useEffect(() => {
         const getItems = async () => {
             const email = user?.email
-            const url = `https://powerful-dawn-49608.herokuapp.com/singleItem?email=${email}`
+            const url = `https://sp-warehouse-server.up.railway.app/singleItem?email=${email}`
            
             try {
                 const { data } = await axios.get(url, {
