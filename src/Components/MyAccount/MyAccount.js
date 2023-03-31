@@ -25,7 +25,7 @@ const MyAccount = () => {
             //console.log("delete with id", id)
             
             
-            fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
+            fetch(`https://sp-warehouse-server.onrender.com/items/${id}`, {
                 method: 'DELETE',
 
 
@@ -46,7 +46,7 @@ const MyAccount = () => {
     useEffect(() => {
         const getItems = async () => {
             const email = user?.email
-            const url = `https://sp-warehouse-server.up.railway.app/singleItem?email=${email}`
+            const url = `https://sp-warehouse-server.onrender.com/singleItem?email=${email}`
            
             try {
                 const { data } = await axios.get(url, {

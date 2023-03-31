@@ -22,7 +22,7 @@ const navigate = useNavigate()
         console.log(item)
 
 
-        fetch('https://sp-warehouse-server.up.railway.app/item', {
+        fetch('https://sp-warehouse-server.onrender.com/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

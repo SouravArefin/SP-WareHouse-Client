@@ -30,8 +30,8 @@ const navigate= useNavigate()
             console.log(newQuantityIncrease,'newQuantityIncrease');
             const updateItem = { newQuantityIncrease }
             
-             fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
-           // fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
+             fetch(`https://sp-warehouse-server.onrender.com/items/${id}`, {
+           // fetch(`https://sp-warehouse-server.onrender.com/items/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -61,8 +61,8 @@ const navigate= useNavigate()
            
         console.log(quantityUpdate);
      
-        fetch(`https://sp-warehouse-server.up.railway.app/deliver/${id}`, {
-        // fetch(`https://sp-warehouse-server.up.railway.app/deliver/${id}`, {
+        fetch(`https://sp-warehouse-server.onrender.com/deliver/${id}`, {
+        // fetch(`https://sp-warehouse-server.onrender.com/deliver/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

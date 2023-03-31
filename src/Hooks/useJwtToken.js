@@ -11,8 +11,8 @@ const useJwtToken = user => {
             const email = user?.user?.email
            // console.log({ email });
             if (email) {
-                const { data } = await axios.post('https://sp-warehouse-server.up.railway.app/signin', { email })
-               // const { data } = await axios.post('https://sp-warehouse-server.up.railway.app/signin', { email })
+                const { data } = await axios.post('https://sp-warehouse-server.onrender.com/signin', { email })
+               // const { data } = await axios.post('https://sp-warehouse-server.onrender.com/signin', { email })
                // console.log(data.getToken);
                 setToken(data.getToken);
                 localStorage.setItem('token', data.getToken);

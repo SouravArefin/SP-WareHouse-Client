@@ -21,7 +21,7 @@ const Home = () => {
             console.log("delete with id", id)
 
 
-            fetch(`https://sp-warehouse-server.up.railway.app/items/${id}`, {
+            fetch(`https://sp-warehouse-server.onrender.com/items/${id}`, {
                 method: 'DELETE',
 
 
